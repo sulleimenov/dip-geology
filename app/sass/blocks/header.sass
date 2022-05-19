@@ -1,0 +1,123 @@
+.header-wrapper
+	background-color: $accent
+.header
+	border-bottom: 1px solid rgba(#FFFFFF, .13)
+.header-top
+	display: flex
+	justify-content: space-between
+	align-items: center
+	height: 70px
+	&__logo
+	&__descr
+		color: #fff
+		margin-left: 20px
+	&__nav
+		display: flex
+		column-gap: 20px
+	&__search
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 37px
+		height: 37px
+		border-radius: 50%
+		background-color: $dark
+		cursor: pointer
+	&__lang
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 37px
+		height: 37px
+		border-radius: 50px
+		background-color: $dark
+		color: #fff
+		position: relative
+		text-transform: uppercase
+		&:hover
+			transition: all .3s ease
+			.header-top__lang-dropdown
+				opacity: 1
+				visibility: visible
+	&__lang-dropdown
+		position: absolute
+		background-color: $dark
+		bottom: -75px
+		border-bottom-left-radius: 50px
+		border-bottom-right-radius: 50px
+		border-top-left-radius: 0
+		border-top-right-radius: 0
+		opacity: 0
+		visibility: hidden
+		a
+			display: flex
+			align-items: center
+			justify-content: center
+			width: 40px
+			height: 40px
+			color: #fff
+			text-transform: uppercase
+			text-decoration: none
+
+.menu-wrapper
+	@include media-breakpoint-down(md)
+		height: 70px
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		position: relative
+.menu
+	display: flex
+	align-items: center
+	height: 70px
+	transition: all 0.2s ease
+	&.show
+		opacity: 1
+		visibility: visible
+	@include media-breakpoint-down(md)
+		position: absolute
+		opacity: 0
+		visibility: hidden
+		flex-direction: column
+		background-color: #fff
+		+shadow
+		align-items: start
+		bottom: -110px
+		z-index: 10
+		padding: 10px 20px
+		height: auto
+		border-radius: 5px	
+	&__item
+		text-decoration: none
+		color: #fff
+		@include media-breakpoint-down(md)
+			color: $textcolor
+		&:not(&:last-child)
+			margin-right: 30px
+			@include media-breakpoint-down(md)
+				margin-right: 0
+		&:hover
+			color: #fff
+			text-decoration: underline
+
+.menu-burger
+	position: relative
+	width: 25px
+	height: 17px
+	@include media-breakpoint-up(md)
+		display: none
+	&::after,
+	span,
+	&::before	
+		position: absolute
+		width: 25px
+		height: 1px
+		background-color: #fff
+	&::after
+		content: ''
+		top: 0
+	&::before
+		content: ''
+		bottom: 0
+	span
+		top: 8px
