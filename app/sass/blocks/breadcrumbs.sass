@@ -1,0 +1,25 @@
+.breadcrumbs-wrapper
+.breadcrumbs
+	display: flex
+	&__item
+		display: flex
+		align-items: center
+		padding: 10px 0
+		font-size: 12px
+		color: $gray
+		text-decoration: none
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			right: -19px
+			background-image: url(../images/icons/right-b.svg)
+			background-repeat: no-repeat
+			background-position: center
+			width: 9px
+			height: 9px
+		&:not(&:last-child)
+			margin-right: 30px
+		&:not(&:first-child)
+			&::after
+				display: none

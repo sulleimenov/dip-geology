@@ -11,6 +11,8 @@
 	&__descr
 		color: #fff
 		margin-left: 20px
+		@include media-breakpoint-down(sm)
+			display: none
 	&__nav
 		display: flex
 		column-gap: 20px
@@ -43,10 +45,8 @@
 		position: absolute
 		background-color: $dark
 		bottom: -75px
-		border-bottom-left-radius: 50px
-		border-bottom-right-radius: 50px
-		border-top-left-radius: 0
-		border-top-right-radius: 0
+		border-radius: 50px
+		width: 37px
 		opacity: 0
 		visibility: hidden
 		a

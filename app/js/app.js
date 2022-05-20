@@ -1,4 +1,5 @@
 import Swiper, { Navigation, Pagination } from 'swiper';
+import micromodal from 'micromodal'
 
 // import '~/app/vendor/mmenu/dist/mmenu.js'
 
@@ -32,5 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	menuBurger.addEventListener('click', function() {
 		menuContent.classList.toggle('show')
 	})
+
+	MicroModal.init({
+		awaitOpenAnimation: true,
+		awaitCloseAnimation: true
+	});
 
 })
